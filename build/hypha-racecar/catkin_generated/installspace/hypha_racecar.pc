@@ -1,0 +1,8 @@
+prefix=/home/odroid/catkin_ws/install
+
+Name: hypha_racecar
+Description: Description of hypha_racecar
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: visualization_msgs
