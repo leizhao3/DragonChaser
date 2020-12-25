@@ -9,7 +9,7 @@
     <arg name="init_a" default="0.0" />
 
     <!-- Map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find hypha_racecar)/map/test/map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find hypha_racecar)/map/map.yaml"/>
 
     <!-- TF setting -->
     <include file="$(find hypha_racecar)/launch/includes/hypha_car_tf.launch.xml" />
@@ -18,10 +18,10 @@
     <!-- RPLidar -->
     <include file="$(find hypha_racecar)/launch/includes/rplidar.launch.xml" />
     <!-- IMU -->
-    <include file="$(find hypha_racecar)/launch/includes/gy85.launch.xml" />
+    <include file="$(find hypha_racecar)/launch/includes/mpu6050.launch.xml" />
     <!-- Arduino -->
     <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
-        <param name="port" value="/dev/uno"/>
+        <param name="port" value="/dev/ttyACM0"/>
         <param name="baud" value="57600"/>
     </node>
 
@@ -61,9 +61,9 @@
         <!-- L1 -->
         <param name="Vcmd" value="1.0" /> <!-- speed of car m/s -->        
         <!-- ESC -->
-        <param name="baseSpeed" value="1425"/> <!-- pwm for motor constant speed, 1480: stop, 1440: ~0.5m/s, 1430: ~1.5m/s --> 
+        <param name="baseSpeed" value="1500"/> <!-- pwm for motor constant speed, 1480: stop, 1440: ~0.5m/s, 1430: ~1.5m/s --> 
         <!-- Servo -->
-        <param name="baseAngle" value="90.0"/> <!-- the middle pos of servo, for tt02: 87, for hsp: ? -->
+        <param name="baseAngle" value="25.0"/> <!-- the middle pos of servo, for tt02: 87, for hsp: ? -->
         <param name="AngleGain" value="-3.5"/> <!-- for tt02: >0, for hsp: <0 -->		
 
         <!-- remap from="/odometry/filtered" to="odom" / --> 

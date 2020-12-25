@@ -92,8 +92,8 @@ L1Controller::L1Controller()
     pn.param("controller_freq", controller_freq, 20);
     pn.param("AngleGain", Angle_gain, -1.0);
     pn.param("GasGain", Gas_gain, 1.0);
-    pn.param("baseSpeed", baseSpeed, 1470);
-    pn.param("baseAngle", baseAngle, 90.0);
+    pn.param("baseSpeed", baseSpeed, 1500);
+    pn.param("baseAngle", baseAngle, 25.0);
 
     //Publishers and Subscribers
     odom_sub = n_.subscribe("/odometry/filtered", 1, &L1Controller::odomCB, this);
