@@ -18,6 +18,7 @@
     <!-- RPLidar -->
     <include file="$(find hypha_racecar)/launch/includes/rplidar.launch.xml" />
     <!-- IMU -->
+    <!-- <include file="$(find hypha_racecar)/launch/includes/gy85.launch.xml" /> -->
     <include file="$(find hypha_racecar)/launch/includes/mpu6050.launch.xml" />
     <!-- Arduino -->
     <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
