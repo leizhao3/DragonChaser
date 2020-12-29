@@ -16,6 +16,7 @@
         <param name="odom_frame_id" value="odom" />                <!-- frame_id (tf) to publish the odometry estimations -->
         <param name="freq" value="10.0"/>                            <!-- Execution frequency. See "Planar Odometry from a Radial Laser Scanner. A Range Flow-based Approach. ICRA'16"-->
 	<param name="init_pose_from_topic" value=""/>                            <!-- (Odom topic) Leave empty to start at point (0,0)-->
+        <remap from="/odom_rf2o" to="/rf2o_laser_odometry/odom"/>    <!-- remap topic after using tianb3 rf2o_laser_odometry node -->
     </node>
 
 </launch>
