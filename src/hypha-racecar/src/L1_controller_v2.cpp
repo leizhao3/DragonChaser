@@ -117,6 +117,7 @@ L1Controller::L1Controller()
     //Show info
     ROS_INFO("[param] baseSpeed: %d", baseSpeed);
     ROS_INFO("[param] baseAngle: %f", baseAngle);
+    ROS_INFO("[param] GasGain: %f", Gas_gain);
     ROS_INFO("[param] AngleGain: %f", Angle_gain);
     ROS_INFO("[param] Vcmd: %f", Vcmd);
     ROS_INFO("[param] Lfw: %f", Lfw);
@@ -391,9 +392,10 @@ void L1Controller::controlLoopCB(const ros::TimerEvent&)
             /*Estimate Gas Input*/
             if(!goal_reached)
             {
-                //double u = getGasInput(carVel.linear.x);
-                //cmd_vel.linear.x = baseSpeed - u;
-                cmd_vel.linear.x = baseSpeed;
+                double u = getGasInput(carVel.linear.x);
+		ROS_INFO("\nu = %.2f",u);
+                cmd_vel.linear.x = baseSpeed - u;
+                //cmd_vel.linear.x = baseSpeed;
                 ROS_INFO("\nGas = %.2f\nSteering angle = %.2f",cmd_vel.linear.x,cmd_vel.angular.z);
             }
         }
