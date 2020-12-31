@@ -85,7 +85,7 @@ L1Controller::L1Controller()
     pn.param("L", L, 0.26);
     pn.param("Lrv", Lrv, 10.0);
     pn.param("Vcmd", Vcmd, 1.0);
-    pn.param("lfw", lfw, 0.13);
+    pn.param("lfw", lfw, 0.107);
     pn.param("lrv", lrv, 10.0);
 
     //Controller parameter

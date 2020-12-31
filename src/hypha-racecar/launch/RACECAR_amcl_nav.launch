@@ -65,8 +65,8 @@
         <param name="baseSpeed" value="1500"/> <!-- pwm for motor constant speed, 1480: stop, 1440: ~0.5m/s, 1430: ~1.5m/s --> 
  	<param name="GasGain" value="20"/> <!-- for tt02: ????, for hsp: ???? -->
         <!-- Servo -->
-        <param name="baseAngle" value="25.0"/> <!-- the middle pos of servo, for tt02: 87, for hsp: ? -->
-        <param name="AngleGain" value="3.5"/> <!-- for tt02: >0, for hsp: <0 -->		
+        <param name="baseAngle" value="59.0"/> <!-- the middle pos of servo, for tt02: 87, for hsp: ? -->
+        <param name="AngleGain" value="4"/> <!-- for tt02: >0, for hsp: <0 -->		
 
         <!-- remap from="/odometry/filtered" to="odom" / --> 
         <remap from="/move_base_node/NavfnROS/plan" to="/move_base/NavfnROS/plan" /> 
