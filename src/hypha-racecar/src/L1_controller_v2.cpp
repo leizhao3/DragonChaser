@@ -90,10 +90,10 @@ L1Controller::L1Controller()
 
     //Controller parameter
     pn.param("controller_freq", controller_freq, 20);
-    pn.param("AngleGain", Angle_gain, -1.0);
+    pn.param("AngleGain", Angle_gain, 1.0);
     pn.param("GasGain", Gas_gain, 1.0);
     pn.param("baseSpeed", baseSpeed, 1500);
-    pn.param("baseAngle", baseAngle, 25.0);
+    pn.param("baseAngle", baseAngle, 59.0);
 
     //Publishers and Subscribers
     odom_sub = n_.subscribe("/odometry/filtered", 1, &L1Controller::odomCB, this);
@@ -347,7 +347,12 @@ double L1Controller::getL1Distance(const double& _Vcmd)
 double L1Controller::getSteeringAngle(double eta)
 {
     double steeringAnge = -atan2((L*sin(eta)),(Lfw/2+lfw*cos(eta)))*(180.0/PI);
-    //ROS_INFO("Steering Angle = %.2f", steeringAnge);
+    ROS_INFO("\nL = %.2f", L);
+    ROS_INFO("\nL*sin(eta) = %.2f", steeringAnge);
+    ROS_INFO("\nLfw/2 = %.2f", Lfw/2);
+    ROS_INFO("\n(Lfw/2+lfw*cos(eta)) = %.2f", (Lfw/2+lfw*cos(eta)));
+    ROS_INFO("\natan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))) = %.2f", atan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))));
+    ROS_INFO("Steering Angle = %.2f", steeringAnge);
     return steeringAnge;
 }
 
