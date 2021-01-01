@@ -347,12 +347,12 @@ double L1Controller::getL1Distance(const double& _Vcmd)
 double L1Controller::getSteeringAngle(double eta)
 {
     double steeringAnge = -atan2((L*sin(eta)),(Lfw/2+lfw*cos(eta)))*(180.0/PI);
-    ROS_INFO("\nL = %.2f", L);
-    ROS_INFO("\nL*sin(eta) = %.2f", steeringAnge);
-    ROS_INFO("\nLfw/2 = %.2f", Lfw/2);
-    ROS_INFO("\n(Lfw/2+lfw*cos(eta)) = %.2f", (Lfw/2+lfw*cos(eta)));
-    ROS_INFO("\natan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))) = %.2f", atan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))));
-    ROS_INFO("Steering Angle = %.2f", steeringAnge);
+    //ROS_INFO("\nL = %.2f", L);
+    //ROS_INFO("\nL*sin(eta) = %.2f", steeringAnge);
+    //ROS_INFO("\nLfw/2 = %.2f", Lfw/2);
+    //ROS_INFO("\n(Lfw/2+lfw*cos(eta)) = %.2f", (Lfw/2+lfw*cos(eta)));
+    //ROS_INFO("\natan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))) = %.2f", atan2((L*sin(eta)),(Lfw/2+lfw*cos(eta))));
+    //ROS_INFO("Steering Angle = %.2f", steeringAnge);
     return steeringAnge;
 }
 
