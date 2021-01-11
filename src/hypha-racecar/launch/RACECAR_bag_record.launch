@@ -26,9 +26,7 @@
 
     <!-- Odometry -->
     <!--rf2o_Laser_Odometry-->
-    <!--<include file="$(find hypha_racecar)/launch/includes/hypha_rf2o.launch.xml" if="$(arg use_rf2o)" />-->
-    <include file="$(find hypha_racecar)/launch/includes/hypha_rf2o.launch.xml" />
-
+    <include file="$(find hypha_racecar)/launch/includes/hypha_rf2o.launch.xml" if="$(arg use_rf2o)" />
     <!-- Robot_Localization -->
     <group if="$(arg use_ekf)">
         <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
