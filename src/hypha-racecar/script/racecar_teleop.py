@@ -91,7 +91,7 @@ if __name__=="__main__":
     wait=3
     speed_mid = 1500 #(1500:stop, 1480:0.5m/s, 1450:2.5m/s)
     speed_bias = 0
-    turn_mid = 59    #(0~180)
+    turn_mid = 67    #(0~180)
     turn_bias = 0
     control_speed = speed_mid
     control_turn = turn_mid

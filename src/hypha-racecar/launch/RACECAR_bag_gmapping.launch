@@ -3,7 +3,7 @@
 <launch>
     <arg name="use_rviz" default="true" />
     <arg name="use_rf2o" default="true" />
-    <arg name="use_ekf"  default="true" />
+    <arg name="use_ekf"  default="false" />
 
     <!--PLAY BAG FILE-->
     <param name="use_sim_time" value="true" />
