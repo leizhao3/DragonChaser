@@ -26,6 +26,6 @@ global_costmap:
         laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
     inflation:
-        inflation_radius: 2.5
-        cost_scaling_factor: 6.0
+        inflation_radius: 1.0
+        cost_scaling_factor: 3.0 #was 6.0. too close to the wall
 
