@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "cmake_modules;diagnostic_msgs;diagnostic_updater;eigen
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lekf;-lekf_localization_nodelet;-lfilter_base;-lfilter_utilities;-lnavsat_transform;-lnavsat_transform_nodelet;-lros_filter;-lros_filter_utilities;-lrobot_localization_estimator;-lros_robot_localization_listener;-lukf;-lukf_localization_nodelet;-lyaml-cpp".split(';') if "-lekf;-lekf_localization_nodelet;-lfilter_base;-lfilter_utilities;-lnavsat_transform;-lnavsat_transform_nodelet;-lros_filter;-lros_filter_utilities;-lrobot_localization_estimator;-lros_robot_localization_listener;-lukf;-lukf_localization_nodelet;-lyaml-cpp" != "" else []
 PROJECT_NAME = "robot_localization"
 PROJECT_SPACE_DIR = "/home/odroid/catkin_ws/install"
-PROJECT_VERSION = "2.6.8"
+PROJECT_VERSION = "2.6.9"

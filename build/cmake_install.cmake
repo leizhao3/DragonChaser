@@ -142,8 +142,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/odroid/catkin_ws/build/rf2o_laser_odometry/cmake_install.cmake")
   include("/home/odroid/catkin_ws/build/navigation_tutorials/robot_setup_tf_tutorial/cmake_install.cmake")
   include("/home/odroid/catkin_ws/build/navigation_tutorials/simple_navigation_goals_tutorial/cmake_install.cmake")
-  include("/home/odroid/catkin_ws/build/robot_localization/cmake_install.cmake")
-  include("/home/odroid/catkin_ws/build/dragon_chaser/cmake_install.cmake")
+  include("/home/odroid/catkin_ws/build/hypha-racecar/cmake_install.cmake")
 
 endif()
 

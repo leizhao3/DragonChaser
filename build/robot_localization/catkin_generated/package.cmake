@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "robot_localization")
-set(robot_localization_VERSION "2.6.8")
+set(robot_localization_VERSION "2.6.9")
 set(robot_localization_MAINTAINER "Tom Moore <ayrton04@gmail.com>")
 set(robot_localization_PACKAGE_FORMAT "3")
 set(robot_localization_BUILD_DEPENDS "geographiclib" "message_generation" "python-catkin-pkg" "python3-catkin-pkg" "roslint" "cmake_modules" "diagnostic_msgs" "diagnostic_updater" "eigen" "eigen_conversions" "geographic_msgs" "geometry_msgs" "message_filters" "nav_msgs" "nodelet" "roscpp" "sensor_msgs" "std_msgs" "std_srvs" "tf2" "tf2_geometry_msgs" "tf2_ros" "xmlrpcpp" "yaml-cpp")
