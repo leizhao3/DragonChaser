@@ -15,7 +15,7 @@ This project is to design and build the self-driving RC car that has following f
 <img src=./pics/ComponentIntro_UpperChassis.jpeg>
 <img src=./pics/ComponentIntro_LowerChassis.jpeg>
 
-## Quick Start
+## No-So Quick Start
 
 
 ## Odroid Setup, Ubuntu Mate 18.04
@@ -42,62 +42,87 @@ Then, you could launch the VNC viewer to access the desktop of Odroid, shown as 
 
 ---
 # Getting Start - Software
-## Quick Start
+## No-So Quick Start
 Step 0 (ONLY need to be done once): set up the ROS environment
 * ROS Installation & Environment Setup (Tutorial following)
 * ROS Multi Machine Setup (Tutorial following)
 * ROS Dependancy Setup (Tutorial following)
 * Steering Angle Tuning (Tutorial following)
 
-Follow the code below to install the DragonChaser:
-```
-git clone https://github.com/leizhao3/DragonChaser
+Step 1: Indoor Mapping Generation - Use the lidar to scan the map of the indoor environment & generate the map
 
+Odroid - Terminal 1:
+```
+~/DragonChaser$ bash authorize_portal.sh
+~/DragonChaser$ roslaunch hypha_racecar Test_gmapping.launch
+```
+Odroid - Terminal 2:
+```
+$ rosrun hypha_racecar racecar_teleop.py
 ```
 
-Step 1: Indoor Mapping Generation
+TF Tree Check Point
+```
+rosrun rqt_tf_tree rqt_tf_tree
 ```
 
-```
-TF Tree Check
 
-RQT Graph Check
+RQT Graph Check Point
+```
+$ rosrun rqt_graph rqt_graph
+```
+
+
+Virtual Machine:
+```
+VirtualBox:~$ rosrun rviz rviz -d ~/DragonChaser/src/hypha-racecar/rviz_cfg/hypha_gmapping.rviz
+```
+
 
 Step 2: Indoor Navigation with lidar ONLY odom
 ```
 
 ```
-TF Tree Check
+TF Tree Check Point
+```
+rosrun rqt_tf_tree rqt_tf_tree
+```
+<img src=./pics/Navigation_Lidar_rqt_tf_tree.png>
 
-RQT Graph Check
+RQT Graph Check Point
+```
+$ rosrun rqt_graph rqt_graph
+```
+<img src=./pics/Navigation_Lidar_NodeGraph.png>
 
 
 Step 3: Indoor Navigation with lidar + particle filter odom
 ```
 
 ```
-TF Tree Check
-
-RQT Graph Check
+TF Tree Check Point
+```
+rosrun rqt_tf_tree rqt_tf_tree
+```
+RQT Graph Check Point
+```
+$ rosrun rqt_graph rqt_graph
+```
 
 ## ROS Dependancy Setup
-Packages that available via ```apt-get``` could be installed by following code:
+Run following code to install all dependencies of DragonChaser & build all the pcakges:
 ```
-sudo apt-get install remmina synaptic gimp ros-melodic-navigation ros-melodic-hector-slam ros-melodic-hector-mapping arduino ros-melodic-geographic-msgs ros-melodic-rosserial-arduino ros-melodic-rosserial ros-melodic-slam-gmapping ros-melodic-mrpt-slam ros-melodic-mrpt-icp-slam-2d ros-melodic-robot-localization -y 
-```
-
-Additional packages need to be installed via source:
-```
-git clone https://github.com/ros-planning/navigation_tutorials.git 
-git clone https://github.com/robopeak/rplidar_ros.git
-git clone https://github.com/tianb03/rf2o_laser_odometry
-git clone https://github.com/Hypha-ROS/hypha-racecar 
+git clone https://github.com/leizhao3/DragonChaser
+cd ~/DragonChaser
+bash install_DragonChaser.sh
 ```
 
 Use ```rosdep``` would be helpful to get all packages installed correctly. Code below & more infomration could be find out here, [rosdep](http://wiki.ros.org/rosdep):
 ```
 rosdep install --from-paths src --ignore-src -r -y
 ```
+
+
 
 ## ROS Installation & Environment Setup
 ROS Tutorial: [Installing and Configuring Your ROS Environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
@@ -126,6 +151,7 @@ Step 3: run ROS
 roscore
 ```
 After all these code, you should see the windows as below, and the ROS_MASTER_URI should shown in both in the console and the windows title. 
+
 <img src=./pics/ROS_Multi_Machine_Setup.png>
 
 **Host Machine (e.g. Odroid) - The Listener**
